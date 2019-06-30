@@ -1,0 +1,18 @@
+something something dubiously legal
+https://www.reddit.com/r/sjain_guides/comments/9qyuij/hwidkms38genmk6_download_and_usage_guide/
+
+disable side channel attack mitigations because ngl the mitigations are only important for virtualized workloads
+https://support.microsoft.com/en-us/help/4073119/protect-against-speculative-execution-side-channel-vulnerabilities-in
+
+disable worthless services that like to fuck things up
+https://www.reddit.com/r/Windows10/comments/771p0m/fcu_ctfmonexe_starting_with_windows/
+https://www.reddit.com/r/Windows10/comments/4gt3h6/service_host_utcsvc_using_30_of_cpu_all_the_time/
+https://www.reddit.com/r/PrivateInternetAccess/comments/aay3kh/pia_running_in_the_background_even_when/
+https://www.windowscentral.com/how-disable-and-remove-game-bar-windows-10-creators-update
+
+tips
+if you are using vr always be on the steamvr beta and also use turnsignal its nice :)
+overclocking/rgb programs love to cause weird problems close them if you get weird problems
+boarderless windowed is basically worthless because fullscreen optimizations in w10 make regular fullscreen just as fast to tab out of AND you get the extra lil bit of performance
+use w10 ltsc its ebin :)
+always head to control panel -> uninstall programs -> remove windows features and remove everything because shit like 'work folders client' are just worthless and probably insecure
