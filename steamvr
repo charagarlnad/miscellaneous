@@ -1,0 +1,21 @@
+a bunch of nice tips/tweaks to make vr a ton better
+
+applying to all headsets:
+go make sure your headset is in direct mode right now
+wipe your configs and reinstall steamvr before you swap to a new headset
+always be on the steamvr beta its unintutively more stable and in general better
+disable steamvr home if you dont care for it because it can drop fps for whatever reason
+disable motion smooting globally it has a performance impact and looks worse than reprojection for me
+if you have multiple displays steamvr overlay fucking SUCKS so use this to beat it into using only 1 monitor https://github.com/elvissteinjr/SteamVR-PrimaryDesktopOverlay
+no matter what headset/gpu you have steamvr has the supersampling too high turn off auto adjust and turn it down a touch 110% - 140% best range depending on headset/gpu
+unless you are rich enough to have wireless use this to keep your cable managed https://store.steampowered.com/app/689580/TurnSignal/
+when you run room setup USE ADVANCED MODE it lets you place nodes instead of just tracing its 10000x better
+nearsighted gang may wanna get specialty vr presecription lenses they are nice https://vroptician.com/
+
+vive only:
+use the 6mm foam mod it gives you more fov and breathes better and is more comfy (IMO) https://vrcover.com/product/htc-vive-foam-replacement-6mm/
+
+index only:
+that pretty shiny faceplate has got to go the headset gets pretty hot and it inhibits cooling
+and with the knuckles controllers try every band notch for a hour or so to find out which one fits the best your first guess will not be right
+the index controllers support fast charging if you use a compatible wall wart
