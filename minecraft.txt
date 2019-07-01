@@ -1,7 +1,9 @@
 there is so many minecraft optimization/improvement mods that i always use even in vanilla servers holy shit
 
 https://www.curseforge.com/minecraft/mc-mods/ai-improvements
+https://www.curseforge.com/minecraft/mc-mods/fps-reducer
 https://www.curseforge.com/minecraft/mc-mods/appleskin
+https://www.curseforge.com/minecraft/mc-mods/sound-filters
 https://www.curseforge.com/minecraft/mc-mods/extendpolyphonylimit
 https://www.curseforge.com/minecraft/mc-mods/fastfurnace
 https://www.curseforge.com/minecraft/mc-mods/fastworkbench
@@ -38,3 +40,10 @@ https://www.curseforge.com/minecraft/mc-mods/deuf-duplicate-entity-uuid-fix
 https://www.curseforge.com/minecraft/mc-mods/gotta-go-fast / https://www.curseforge.com/minecraft/mc-mods/mtqfix / https://www.curseforge.com/minecraft/mc-mods/movingquickly
 https://www.curseforge.com/minecraft/mc-mods/redshark
 https://www.curseforge.com/minecraft/mc-mods/laggoggles
+https://www.curseforge.com/minecraft/mc-mods/caliper
+
+---
+
+stuff not to use
+https://www.curseforge.com/minecraft/mc-mods/smoothwater / https://www.curseforge.com/minecraft/mc-mods/mage drastic fps drop and doesnt play nice with optifine
+
