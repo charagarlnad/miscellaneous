@@ -36,3 +36,5 @@ theres also a bunch of useful things for some instances
 https://www.curseforge.com/minecraft/mc-mods/mapper
 https://www.curseforge.com/minecraft/mc-mods/deuf-duplicate-entity-uuid-fix
 https://www.curseforge.com/minecraft/mc-mods/gotta-go-fast / https://www.curseforge.com/minecraft/mc-mods/mtqfix / https://www.curseforge.com/minecraft/mc-mods/movingquickly
+https://www.curseforge.com/minecraft/mc-mods/redshark
+https://www.curseforge.com/minecraft/mc-mods/laggoggles
