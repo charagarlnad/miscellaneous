@@ -1,0 +1,37 @@
+there is so many minecraft optimization/improvement mods that i always use even in vanilla servers holy shit
+
+https://www.curseforge.com/minecraft/mc-mods/ai-improvements
+https://www.curseforge.com/minecraft/mc-mods/appleskin
+https://www.curseforge.com/minecraft/mc-mods/extendpolyphonylimit
+https://www.curseforge.com/minecraft/mc-mods/fastfurnace
+https://www.curseforge.com/minecraft/mc-mods/fastworkbench
+https://www.curseforge.com/minecraft/mc-mods/foamfix-for-minecraft
+https://www.curseforge.com/minecraft/mc-mods/journeymap
+https://www.curseforge.com/minecraft/mc-mods/jei
+https://www.curseforge.com/minecraft/mc-mods/minecart-ai-fix
+https://www.curseforge.com/minecraft/mc-mods/multithreaded-noise
+https://www.curseforge.com/minecraft/mc-mods/phosphor
+https://www.curseforge.com/minecraft/mc-mods/surge
+https://www.curseforge.com/minecraft/mc-mods/texfix
+https://www.curseforge.com/minecraft/mc-mods/the-one-probe
+https://www.curseforge.com/minecraft/mc-mods/unloader
+https://www.curseforge.com/minecraft/mc-mods/vanillafix
+https://www.curseforge.com/minecraft/mc-mods/make-zoom-zoom (outdated and using old mixin versions so dont use unless its been updated to newer mixins)
+https://www.curseforge.com/minecraft/mc-mods/smooth-font (make sure to disable smoothing and only enable the optimization)
+
+(ill throw in configs here maybe cause some of these need extra configs but like mods change so much)
+
+and of course, https://optifine.net/downloads
+
+and heres a couple guides to help performance in other ways too
+https://www.reddit.com/r/feedthebeast/comments/beyi1t/the_ultimate_guide_to_improving_performance_in/
+https://aikar.co/2018/07/02/tuning-the-jvm-g1gc-garbage-collector-flags-for-minecraft/
+https://www.reddit.com/r/feedthebeast/comments/as6p87/java_vms_and_you_how_to_reduce_your_ram_and_cpu/
+
+---
+
+theres also a bunch of useful things for some instances
+
+https://www.curseforge.com/minecraft/mc-mods/mapper
+https://www.curseforge.com/minecraft/mc-mods/deuf-duplicate-entity-uuid-fix
+https://www.curseforge.com/minecraft/mc-mods/gotta-go-fast / https://www.curseforge.com/minecraft/mc-mods/mtqfix / https://www.curseforge.com/minecraft/mc-mods/movingquickly
