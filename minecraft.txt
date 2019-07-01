@@ -27,6 +27,7 @@ and heres a couple guides to help performance in other ways too
 https://www.reddit.com/r/feedthebeast/comments/beyi1t/the_ultimate_guide_to_improving_performance_in/
 https://aikar.co/2018/07/02/tuning-the-jvm-g1gc-garbage-collector-flags-for-minecraft/
 https://www.reddit.com/r/feedthebeast/comments/as6p87/java_vms_and_you_how_to_reduce_your_ram_and_cpu/
+https://www.reddit.com/r/feedthebeast/comments/5jhuk9/modded_mc_and_memory_usage_a_history_with_a/
 
 ---
 
