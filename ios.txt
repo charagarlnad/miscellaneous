@@ -15,3 +15,4 @@ sential - epic theme
 noccbar - removes dumb graabber on the lock screen
 colorflow 4 - MUCH better music UI
 filza - file manager
+brickfix - under ios 12.3 brick protection :) https://bugs.chromium.org/p/project-zero/issues/detail?id=1826
