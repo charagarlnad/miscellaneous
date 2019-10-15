@@ -1,7 +1,7 @@
 this is just a bunch of cool n rad tweaks that i personally use
 
 icleaner - the one the only the legend
-anemone 3 - themeing engine
+snowboard - themeing engine, bettery battery than anemone
 autounlockx - automatic unlock when face id is accepted
 noctis12 - dark mode gang
 shuffle - makes tweaks go to the top of settings :))
@@ -14,5 +14,6 @@ hidebarx - no bar that goes in that spacing
 sential - epic theme
 noccbar - removes dumb graabber on the lock screen
 colorflow 4 - MUCH better music UI
-filza - file manager
+lowbatterybanner - no longer an annoying full screen notif
 brickfix - under ios 12.3 brick protection :) https://bugs.chromium.org/p/project-zero/issues/detail?id=1826
+bubbles - messages app gradient :D
