@@ -67,3 +67,6 @@ echo \
 };' \
 | dtc -@ -I dts -O dtb -o /boot/overlays/novchiq.dtbo
 echo "dtoverlay=novchiq" >> /boot/config.txt
+
+#reboot to apply changes
+reboot 0
