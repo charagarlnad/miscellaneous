@@ -16,6 +16,7 @@ systemctl disable keyboard-setup.service
 systemctl disable hciuart.service
 
 # disable activity LEDs
+# 10 blinks at startup will still appear
 echo "dtparam=act_led_trigger=none" >> /boot/config.txt
 echo "dtparam=act_led_activelow=on" >> /boot/config.txt
 
