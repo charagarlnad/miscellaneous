@@ -1,4 +1,5 @@
 # this is my own script
+# curl -sSL https://raw.githubusercontent.com/charagarlnad/miscellaneous/master/arch_install.sh | bash
 
 bootstrapper_dialog() {
     DIALOG_RESULT=$(dialog --clear --stdout --backtitle "Chara's Arch Installer" --no-shadow "$@" 0 0 2>/dev/null)
@@ -92,7 +93,7 @@ echo \
 
 echo 'Installing EFISTUB...'
 efibootmgr --disk /dev/sda --part 1 --create --label 'Arch' --loader /vmlinuz-linux --unicode 'root=/dev/sda rw mitigations=off initrd=\initramfs-linux.img'
-EOF
+EOF | tee log.txt
 
 umount -R /mnt
 sync
