@@ -33,7 +33,7 @@ sgdisk -t 2:8300 /dev/sda
 
 echo 'Formatting partitions...'
 mkfs.fat -F 32 /dev/sda1
-mkfs.xfs /dev/sda2
+mkfs.xfs -f /dev/sda2
 
 echo 'Mounting partitions...'
 mount /dev/sda2 /mnt
@@ -71,7 +71,7 @@ hwclock --systohc
 
 echo 'Adding user...'
 useradd -m -G wheel,systemd-journal -s /bin/bash ${user}
-echo "${user_name}:${user_password} | chpasswd
+echo "${user_name}:${user_password}" | chpasswd
 
 echo 'Installing Yay...'
 git clone https://aur.archlinux.org/yay-bin.git
