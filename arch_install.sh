@@ -92,7 +92,7 @@ sudo -u "${user_name}" makepkg
 find . -name "*.pkg.tar.xz" -exec pacman --noconfirm -U {} \;
 cd ..
 rm -rf yay-bin
-sudo sed -i 's/#Color/Color/' /etc/pacman.conf
+sed -i 's/#Color/Color/' /etc/pacman.conf
 
 echo 'Setting up the network...'
 systemctl enable NetworkManager.service
@@ -105,6 +105,11 @@ echo \
 
 echo 'Enabling TRIM...'
 systemctl enable fstrim.timer
+
+# yeah xfs fsck does nothing and breaks a silent boot
+echo 'Disabling fsck'
+sed -i 's/\ fsck)/)/g' /etc/mkinitcpio.conf
+mkinitcpio -p linux
 
 echo 'Installing EFISTUB...'
 efibootmgr --disk /dev/sda --part 1 --create --label 'Arch' --loader /vmlinuz-linux --unicode "root=PARTUUID=${root_uuid} rootfstype=xfs rw mitigations=off  quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3 vga=current i915.fastboot=1 initrd=\initramfs-linux.img"
