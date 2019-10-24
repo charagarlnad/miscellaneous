@@ -1,5 +1,5 @@
 # this is my own script
-# curl -sSL https://raw.githubusercontent.com/charagarlnad/miscellaneous/master/arch_install.sh | bash
+# curl -sSL https://raw.githubusercontent.com/charagarlnad/miscellaneous/master/arch_install.sh | tr -d '\r' bash
 
 bootstrapper_dialog() {
     DIALOG_RESULT=$(dialog --clear --stdout --backtitle "Chara's Arch Installer" --no-shadow "$@" 0 0 2>/dev/null)
@@ -76,6 +76,7 @@ echo "${user_name}:${user_password}" | chpasswd
 
 echo 'Installing Yay...'
 git clone https://aur.archlinux.org/yay-bin.git
+chmod 777 yay-bin
 cd yay-bin
 sudo -u "${user_name}" makepkg -si
 cd ..
