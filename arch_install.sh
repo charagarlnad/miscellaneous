@@ -71,20 +71,20 @@ timedatectl set-ntp true
 hwclock --systohc
 
 echo 'Adding user...'
-useradd -m -G wheel,systemd-journal -s /bin/bash ${user}
+useradd -m -G wheel,systemd-journal -s /bin/bash "${user}"
 echo "${user_name}:${user_password}" | chpasswd
 
 echo 'Installing Yay...'
 git clone https://aur.archlinux.org/yay-bin.git
 cd yay-bin
-makepkg -si
+sudo -u "${user_name}" makepkg -si
 cd ..
 rm -rf yay-bin
 sudo sed -i 's/#Color/Color/' /etc/pacman.conf
 
 systemctl enable NetworkManager
 
-echo "#{hostname}" > /etc/hostname
+echo "${hostname}" > /etc/hostname
 echo \
 "127.0.0.1	localhost
 ::1		localhost
@@ -93,7 +93,7 @@ echo \
 
 echo 'Installing EFISTUB...'
 efibootmgr --disk /dev/sda --part 1 --create --label 'Arch' --loader /vmlinuz-linux --unicode 'root=/dev/sda rw mitigations=off initrd=\initramfs-linux.img'
-EOF | tee log.txt
+EOF
 
 umount -R /mnt
 sync
