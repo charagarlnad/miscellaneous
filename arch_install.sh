@@ -42,7 +42,7 @@ mkdir -p /mnt/boot
 mount /dev/sda1 /mnt/boot
 
 echo 'Installing packages...'
-pacstrap /mnt base fakeroot make gcc binutils patch dialog nano efibootmgr git sudo wpa_supplicant networkmanager
+pacstrap /mnt base linux linux-firmware fakeroot make gcc binutils patch dialog nano efibootmgr git sudo wpa_supplicant networkmanager
 
 echo 'Adding fstab...'
 genfstab -U -p /mnt > /mnt/etc/fstab
