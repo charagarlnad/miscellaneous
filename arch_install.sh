@@ -49,10 +49,14 @@ pacstrap /mnt base linux linux-firmware xfsprogs fakeroot make gcc binutils patc
 bootstrapper_dialog --title "WiFi" --yesno "Does this system need packages for WiFi support?\n"
 #[[ $DIALOG_RESULT -eq 0 ]] && wifi=1 || wifi=0
 (( $DIALOG_RESULT == 0 )) && wifi=1 || wifi=0
+read -n1 -r -p "Press space to continue...1" key
 
 if (( $wifi == 1 )); then
+    read -n1 -r -p "Press space to continue...2" key
     pacstrap /mnt wpa_supplicant networkmanager
 fi
+read -n1 -r -p "Press space to continue...3" key
+
 
 echo 'Adding fstab...'
 genfstab -U -p /mnt > /mnt/etc/fstab
