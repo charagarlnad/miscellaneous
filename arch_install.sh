@@ -1,4 +1,5 @@
 # curl -sSL https://raw.githubusercontent.com/charagarlnad/miscellaneous/master/arch_install.sh | tr -d '\r' | bash
+# use nmtui to setup wifi in new install
 
 bootstrapper_dialog() {
     DIALOG_RESULT=$(dialog --clear --stdout --backtitle "Chara's Arch Installer" --no-shadow "$@" 0 0 2>/dev/null)
@@ -42,8 +43,16 @@ mount /dev/sda1 /mnt/boot
 
 root_uuid=$(blkid -o value -s PARTUUID /dev/sda2)
 
-echo 'Installing packages...'
-pacstrap /mnt base linux linux-firmware xfsprogs fakeroot make gcc binutils patch dialog nano efibootmgr git sudo wpa_supplicant networkmanager
+echo 'Installing core packages...'
+pacstrap /mnt base linux linux-firmware xfsprogs fakeroot make gcc binutils patch dialog nano efibootmgr git sudo
+
+bootstrapper_dialog --title "WiFi" --yesno "Does this system need packages for WiFi support?\n"
+#[[ $DIALOG_RESULT -eq 0 ]] && wifi=1 || wifi=0
+(( $DIALOG_RESULT == 0 )) && wifi=1 || wifi=0
+
+if (( $wifi == 1 )); then
+    pacstrap /mnt wpa_supplicant networkmanager
+fi
 
 echo 'Adding fstab...'
 genfstab -U -p /mnt > /mnt/etc/fstab
@@ -105,4 +114,5 @@ EOF
 umount -R /mnt
 sync
 
-bootstrapper_dialog --title "Done" --msgbox "Installation complete! Reboot into your new arch install :3\n"
+bootstrapper_dialog --title "Done" --msgbox "Installation complete! The system will now reboot into your new arch install :3\n"
+reboot 0
