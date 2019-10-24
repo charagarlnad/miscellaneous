@@ -41,7 +41,7 @@ mount /dev/sda2 /mnt
 mkdir -p /mnt/boot
 mount /dev/sda1 /mnt/boot
 
-root_uuid=$(blkid -o value -s UUID /dev/sda2)
+root_uuid=$(blkid -o value -s PARTUUID /dev/sda2)
 
 echo 'Installing packages...'
 pacstrap /mnt base linux linux-firmware xfsprogs fakeroot make gcc binutils patch dialog nano efibootmgr git sudo wpa_supplicant networkmanager
@@ -96,7 +96,7 @@ echo \
 > /etc/hosts
 
 echo 'Installing EFISTUB...'
-efibootmgr --disk /dev/sda --part 1 --create --label 'Arch' --loader /vmlinuz-linux --unicode "root=${root_uuid} rw mitigations=off rootfstype=xfs initrd=\initramfs-linux.img"
+efibootmgr --disk /dev/sda --part 1 --create --label 'Arch' --loader /vmlinuz-linux --unicode "root=PARTUUID=${root_uuid} rw mitigations=off rootfstype=xfs initrd=\initramfs-linux.img"
 EOF
 
 umount -R /mnt
