@@ -1,5 +1,7 @@
 # curl -sSL https://raw.githubusercontent.com/charagarlnad/miscellaneous/master/arch_install.sh | tr -d '\r' | bash
 # use nmtui to setup wifi in new install
+# yay -S xorg-server xorg-xinit mesa xfce4 ark-gtk-theme chromium
+# yay -S tlp tlp-rdw acpi_call
 
 bootstrapper_dialog() {
     DIALOG_RESULT=$(dialog --clear --stdout --backtitle "Chara's Arch Installer" --no-shadow "$@" 0 0 2>/dev/null)
