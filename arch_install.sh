@@ -71,7 +71,7 @@ timedatectl set-ntp true
 hwclock --systohc
 
 echo 'Adding user...'
-useradd -m -G wheel,systemd-journal -s /bin/bash "${user}"
+useradd -m -G wheel,systemd-journal -s /bin/bash "${user_name}"
 echo "${user_name}:${user_password}" | chpasswd
 
 echo 'Installing Yay...'
