@@ -46,13 +46,13 @@ pacstrap /mnt base fakeroot make gcc binutils patch dialog nano efibootmgr git s
 echo 'Adding fstab...'
 genfstab -U -p /mnt > /mnt/etc/fstab
 
-bootstrapper_dialog --title 'User Name' --inputbox "Please enter a username.\n" 0 0
+bootstrapper_dialog --title 'User Name' --inputbox "Please enter a username.\n"
 user_name="$DIALOG_RESULT"
 
-bootstrapper_dialog --title "User Password" --passwordbox "Please enter a strong password.\n" 0 0
+bootstrapper_dialog --title "User Password" --passwordbox "Please enter a strong password.\n"
 user_password="$DIALOG_RESULT"
 
-bootstrapper_dialog --title "Hostname" --inputbox "Please enter a hostname.\n" 0 0
+bootstrapper_dialog --title "Hostname" --inputbox "Please enter a hostname.\n"
 hostname="$DIALOG_RESULT"
 
 arch-chroot /mnt /bin/bash <<EOF
