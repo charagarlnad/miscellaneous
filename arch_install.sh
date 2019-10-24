@@ -1,4 +1,3 @@
-# this is my own script
 # curl -sSL https://raw.githubusercontent.com/charagarlnad/miscellaneous/master/arch_install.sh | tr -d '\r' | bash
 
 bootstrapper_dialog() {
@@ -68,6 +67,7 @@ echo 'Enabling sudo...'
 echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
 chmod 0440 /etc/sudoers
 
+echo 'Setting the clock...'
 ln -sf /usr/share/zoneinfo/America/New_York /etc/localtime
 timedatectl set-ntp true
 hwclock --systohc
@@ -87,7 +87,7 @@ rm -rf yay-bin
 sudo sed -i 's/#Color/Color/' /etc/pacman.conf
 
 echo 'Setting up the network...'
-systemctl enable NetworkManager
+systemctl enable NetworkManager.service
 echo "${hostname}" > /etc/hostname
 echo \
 "127.0.0.1	localhost
@@ -95,8 +95,11 @@ echo \
 127.0.1.1	${hostname}.localdomain	${hostname}" \
 > /etc/hosts
 
+echo 'Enabling TRIM...'
+systemctl enable fstrim.timer
+
 echo 'Installing EFISTUB...'
-efibootmgr --disk /dev/sda --part 1 --create --label 'Arch' --loader /vmlinuz-linux --unicode "root=PARTUUID=${root_uuid} rw mitigations=off rootfstype=xfs initrd=\initramfs-linux.img"
+efibootmgr --disk /dev/sda --part 1 --create --label 'Arch' --loader /vmlinuz-linux --unicode "root=PARTUUID=${root_uuid} rootfstype=xfs rw mitigations=off  quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3 vga=current initrd=\initramfs-linux.img"
 EOF
 
 umount -R /mnt
