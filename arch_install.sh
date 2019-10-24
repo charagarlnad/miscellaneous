@@ -1,5 +1,5 @@
 # this is my own script
-# curl -sSL https://raw.githubusercontent.com/charagarlnad/miscellaneous/master/arch_install.sh | tr -d '\r' bash
+# curl -sSL https://raw.githubusercontent.com/charagarlnad/miscellaneous/master/arch_install.sh | tr -d '\r' | bash
 
 bootstrapper_dialog() {
     DIALOG_RESULT=$(dialog --clear --stdout --backtitle "Chara's Arch Installer" --no-shadow "$@" 0 0 2>/dev/null)
@@ -44,7 +44,7 @@ mount /dev/sda1 /mnt/boot
 root_uuid=$(blkid -o value -s UUID /dev/sda2)
 
 echo 'Installing packages...'
-pacstrap /mnt base linux linux-firmware fakeroot make gcc binutils patch dialog nano efibootmgr git sudo wpa_supplicant networkmanager
+pacstrap /mnt base linux linux-firmware xfsprogs fakeroot make gcc binutils patch dialog nano efibootmgr git sudo wpa_supplicant networkmanager
 
 echo 'Adding fstab...'
 genfstab -U -p /mnt > /mnt/etc/fstab
@@ -96,7 +96,7 @@ echo \
 > /etc/hosts
 
 echo 'Installing EFISTUB...'
-efibootmgr --disk /dev/sda --part 1 --create --label 'Arch' --loader /vmlinuz-linux --unicode "root=${root_uuid} rw mitigations=off initrd=\initramfs-linux.img"
+efibootmgr --disk /dev/sda --part 1 --create --label 'Arch' --loader /vmlinuz-linux --unicode "root=${root_uuid} rw mitigations=off rootfstype=xfs initrd=\initramfs-linux.img"
 EOF
 
 umount -R /mnt
