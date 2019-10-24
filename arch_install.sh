@@ -78,13 +78,14 @@ echo 'Installing Yay...'
 git clone https://aur.archlinux.org/yay-bin.git
 chmod 777 yay-bin
 cd yay-bin
-sudo -u "${user_name}" makepkg -si
+sudo -u "${user_name}" makepkg
+find . -name "*.pkg.tar.xz" -exec pacman --noconfirm -U {} \;
 cd ..
 rm -rf yay-bin
 sudo sed -i 's/#Color/Color/' /etc/pacman.conf
 
+echo 'Setting up the network...'
 systemctl enable NetworkManager
-
 echo "${hostname}" > /etc/hostname
 echo \
 "127.0.0.1	localhost
