@@ -31,6 +31,10 @@ https://aikar.co/2018/07/02/tuning-the-jvm-g1gc-garbage-collector-flags-for-mine
 https://www.reddit.com/r/feedthebeast/comments/as6p87/java_vms_and_you_how_to_reduce_your_ram_and_cpu/
 https://www.reddit.com/r/feedthebeast/comments/5jhuk9/modded_mc_and_memory_usage_a_history_with_a/
 
+and my java args
+
+-d64 -XX:+UnlockExperimentalVMOptions -XX:+AggressiveOpts -XX:UseSSE=4 -XX:+OptimizeStringConcat -XX:+UseStringDeduplication -XX:+UseCompressedOops -XX:+UseCodeCacheFlushing -XX:+UseAES -XX:+UseAESIntrinsics -server
+
 ---
 
 theres also a bunch of useful things for some instances
