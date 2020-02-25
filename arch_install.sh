@@ -114,7 +114,7 @@ sed -i 's/\ fsck)/)/g' /etc/mkinitcpio.conf
 mkinitcpio -p linux
 
 echo 'Installing EFISTUB...'
-efibootmgr --disk /dev/sda --part 1 --create --label 'Arch' --loader /vmlinuz-linux --unicode "root=PARTUUID=${root_uuid} rootfstype=xfs rw mitigations=off  quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3 vga=current i915.fastboot=1 initrd=\initramfs-linux.img"
+efibootmgr --disk /dev/sda --part 1 --create --label 'Arch' --loader /vmlinuz-linux --unicode "root=PARTUUID=${root_uuid} rootfstype=xfs rw mitigations=off quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3 vga=current i915.fastboot=1 initrd=\initramfs-linux.img"
 EOF
 
 umount -R /mnt
