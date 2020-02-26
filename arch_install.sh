@@ -108,6 +108,13 @@ echo \
 127.0.1.1	${hostname}.localdomain	${hostname}" \
 > /etc/hosts
 
+# usually targets before sysinit which can cause this to delay boot
+echo 'Optimizing systemd-backlight.service...'
+echo \
+'[Unit]
+Before=graphical.target shutdown.target' \
+> '/etc/systemd/system/systemd-backlight@.service'
+
 echo 'Enabling TRIM...'
 systemctl enable fstrim.timer
 
