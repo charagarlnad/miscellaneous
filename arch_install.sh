@@ -5,6 +5,7 @@
 
 # possibly optimize pulseaudio? https://wiki.archlinux.org/index.php/PulseAudio/Troubleshooting#Setting_the_default_fragment_number_and_buffer_size_in_PulseAudio
 # arch defaults to mq-deadline which is optimal btw
+# if cup rly old or ryzen you can use haveged instead of random.trust_cpu=on
 
 bootstrapper_dialog() {
     DIALOG_RESULT=$(dialog --clear --stdout --backtitle "Chara's Arch Installer" --no-shadow "$@" 0 0 2>/dev/null)
@@ -125,7 +126,7 @@ sed -i 's/\ fsck)/)/g' /etc/mkinitcpio.conf
 mkinitcpio -p linux
 
 echo 'Installing EFISTUB...'
-efibootmgr --disk /dev/sda --part 1 --create --label 'Arch' --loader /vmlinuz-linux --unicode "root=PARTUUID=${root_uuid} rootfstype=xfs rw mitigations=off quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3 vga=current i915.fastboot=1 initrd=\initramfs-linux.img"
+efibootmgr --disk /dev/sda --part 1 --create --label 'Arch' --loader /vmlinuz-linux --unicode "root=PARTUUID=${root_uuid} rootfstype=xfs rw random.trust_cpu=on mitigations=off quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3 vga=current i915.fastboot=1 initrd=\initramfs-linux.img"
 EOF
 
 umount -R /mnt
