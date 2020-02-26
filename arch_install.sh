@@ -4,6 +4,7 @@
 # yay -S tlp tlp-rdw acpi_call
 
 # possibly optimize pulseaudio? https://wiki.archlinux.org/index.php/PulseAudio/Troubleshooting#Setting_the_default_fragment_number_and_buffer_size_in_PulseAudio
+# arch defaults to mq-deadline which is optimal btw
 
 bootstrapper_dialog() {
     DIALOG_RESULT=$(dialog --clear --stdout --backtitle "Chara's Arch Installer" --no-shadow "$@" 0 0 2>/dev/null)
