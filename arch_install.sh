@@ -1,6 +1,6 @@
 # curl -sSL https://raw.githubusercontent.com/charagarlnad/miscellaneous/master/arch_install.sh | tr -d '\r' | bash
 # use nmtui to setup wifi in new install
-# yay -S xorg-server xorg-xinit mesa xfce4 ark-gtk-theme chromium
+# yay -S xorg-server xorg-xinit mesa xfce4 ark-gtk-theme chromium pulseaudio
 # yay -S tlp tlp-rdw acpi_call
 
 bootstrapper_dialog() {
@@ -39,9 +39,9 @@ mkfs.fat -F 32 /dev/sda1
 mkfs.xfs -f /dev/sda2
 
 echo 'Mounting partitions...'
-mount /dev/sda2 /mnt
+mount -o noatime /dev/sda2 /mnt
 mkdir -p /mnt/boot
-mount /dev/sda1 /mnt/boot
+mount -o noatime /dev/sda1 /mnt/boot
 
 root_uuid=$(blkid -o value -s PARTUUID /dev/sda2)
 
