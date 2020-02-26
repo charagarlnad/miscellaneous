@@ -3,6 +3,8 @@
 # yay -S xorg-server xorg-xinit mesa xfce4 ark-gtk-theme chromium pulseaudio
 # yay -S tlp tlp-rdw acpi_call
 
+# possibly optimize pulseaudio? https://wiki.archlinux.org/index.php/PulseAudio/Troubleshooting#Setting_the_default_fragment_number_and_buffer_size_in_PulseAudio
+
 bootstrapper_dialog() {
     DIALOG_RESULT=$(dialog --clear --stdout --backtitle "Chara's Arch Installer" --no-shadow "$@" 0 0 2>/dev/null)
 }
@@ -109,6 +111,7 @@ echo 'Enabling TRIM...'
 systemctl enable fstrim.timer
 
 # yeah xfs fsck does nothing and breaks a silent boot
+# probably should see if I can disable fsck only on that partition in the fstab ngl :/
 echo 'Disabling fsck'
 sed -i 's/\ fsck)/)/g' /etc/mkinitcpio.conf
 mkinitcpio -p linux
