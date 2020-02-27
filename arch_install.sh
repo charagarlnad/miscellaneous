@@ -120,7 +120,8 @@ echo 'Enabling TRIM...'
 systemctl enable fstrim.timer
 
 # yeah xfs fsck does nothing and breaks a silent boot
-# probably should see if I can disable fsck only on that partition in the fstab ngl :/
+# fsck hook only does root FS so this is safe to disable if you are using xfs
+# probably wanna disable fsck in the fstab too doe
 echo 'Disabling fsck'
 sed -i 's/\ fsck)/)/g' /etc/mkinitcpio.conf
 mkinitcpio -p linux
