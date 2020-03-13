@@ -9,6 +9,9 @@ https://www.reddit.com/r/Windows10/comments/771p0m/fcu_ctfmonexe_starting_with_w
 https://www.reddit.com/r/Windows10/comments/4gt3h6/service_host_utcsvc_using_30_of_cpu_all_the_time/
 https://www.reddit.com/r/PrivateInternetAccess/comments/aay3kh/pia_running_in_the_background_even_when/
 https://www.windowscentral.com/how-disable-and-remove-game-bar-windows-10-creators-update
+print spooler
+nordvpn-service
+Windows Image Acquisition
 
 tips
 overclocking/rgb programs love to cause weird problems close them if you get weird problems
