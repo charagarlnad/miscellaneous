@@ -12,6 +12,7 @@ https://www.windowscentral.com/how-disable-and-remove-game-bar-windows-10-creato
 print spooler
 nordvpn-service
 Windows Image Acquisition
+https://www.windowscentral.com/how-permanently-disable-windows-defender-windows-10#disable-windows-defender-with-registry
 
 tips
 overclocking/rgb programs love to cause weird problems close them if you get weird problems
