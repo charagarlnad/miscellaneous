@@ -13,6 +13,12 @@ print spooler
 nordvpn-service
 Windows Image Acquisition
 https://www.windowscentral.com/how-permanently-disable-windows-defender-windows-10#disable-windows-defender-with-registry
+UWPRPCService
+https://docs.microsoft.com/en-us/windows/application-management/per-user-services-in-windows#disable-per-user-services
+Connected Devices Platform Service
+
+disable everything here other than bluetooth and capture
+https://www.tenforums.com/general-support/58863-connected-devices-platform-service-what-does-do.html#7
 
 tips
 overclocking/rgb programs love to cause weird problems close them if you get weird problems
