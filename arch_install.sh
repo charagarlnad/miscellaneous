@@ -50,13 +50,14 @@ mount -o noatime /dev/sda1 /mnt/boot
 root_uuid=$(blkid -o value -s PARTUUID /dev/sda2)
 
 echo 'Installing core packages...'
-pacstrap /mnt base linux linux-firmware xfsprogs fakeroot make gcc binutils patch dialog nano efibootmgr git sudo
+# xfsprogs
+pacstrap /mnt base linux linux-firmware e2fsprogs fakeroot make gcc binutils patch dialog nano efibootmgr git sudo
 
 bootstrapper_dialog --title "WiFi" --yesno "Does this system need packages for WiFi support?\n"
 [[ $DIALOG_RESULT -eq 0 ]] && wifi=1 || wifi=0
 
 if (( $wifi == 1 )); then
-    pacstrap /mnt wpa_supplicant networkmanager
+    pacstrap /mnt iwd networkmanager
 fi
 
 echo 'Adding fstab...'
@@ -82,7 +83,7 @@ echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
 chmod 0440 /etc/sudoers
 
 echo 'Setting the clock...'
-ln -sf /usr/share/zoneinfo/America/New_York /etc/localtime
+ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime
 timedatectl set-ntp true
 hwclock --systohc
 
@@ -122,12 +123,13 @@ systemctl enable fstrim.timer
 # yeah xfs fsck does nothing and breaks a silent boot
 # fsck hook only does root FS so this is safe to disable if you are using xfs
 # probably wanna disable fsck in the fstab too doe
-echo 'Disabling fsck'
-sed -i 's/\ fsck)/)/g' /etc/mkinitcpio.conf
-mkinitcpio -p linux
+# echo 'Disabling fsck'
+# sed -i 's/\ fsck)/)/g' /etc/mkinitcpio.conf
+# mkinitcpio -p linux
 
+# vga=current i915.fastboot=1
 echo 'Installing EFISTUB...'
-efibootmgr --disk /dev/sda --part 1 --create --label 'Arch' --loader /vmlinuz-linux --unicode "root=PARTUUID=${root_uuid} rootfstype=xfs rw random.trust_cpu=on mitigations=off quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3 vga=current i915.fastboot=1 initrd=\initramfs-linux.img"
+efibootmgr --disk /dev/sda --part 1 --create --label 'Arch' --loader /vmlinuz-linux --unicode "root=PARTUUID=${root_uuid} rootfstype=ext4 rw random.trust_cpu=on mitigations=off quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3 initrd=\initramfs-linux.img"
 EOF
 
 umount -R /mnt
