@@ -40,7 +40,7 @@ sgdisk -t 2:8300 /dev/sda
 
 echo 'Formatting partitions...'
 mkfs.fat -F 32 /dev/sda1
-mkfs.xfs -f /dev/sda2
+mkfs.ext4 /dev/sda2
 
 echo 'Mounting partitions...'
 mount -o noatime /dev/sda2 /mnt
