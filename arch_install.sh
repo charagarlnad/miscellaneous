@@ -125,7 +125,7 @@ systemctl enable fstrim.timer
 # probably wanna disable fsck in the fstab too doe
 # echo 'Disabling fsck'
 # sed -i 's/\ fsck)/)/g' /etc/mkinitcpio.conf
-# mkinitcpio -p linux
+mkinitcpio -p linux
 
 # vga=current i915.fastboot=1
 echo 'Installing EFISTUB...'
