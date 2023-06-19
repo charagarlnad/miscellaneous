@@ -51,7 +51,7 @@ root_uuid=$(blkid -o value -s PARTUUID /dev/sda2)
 
 echo 'Installing core packages...'
 # xfsprogs
-pacstrap /mnt base linux linux-firmware e2fsprogs fakeroot make gcc binutils patch dialog nano efibootmgr git sudo
+pacstrap /mnt base linux linux-firmware e2fsprogs fakeroot make gcc binutils patch dialog nano efibootmgr git sudo dropbear dropbear-scp
 
 bootstrapper_dialog --title "WiFi" --yesno "Does this system need packages for WiFi support?\n"
 [[ $DIALOG_RESULT -eq 0 ]] && wifi=1 || wifi=0
@@ -83,7 +83,7 @@ echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
 chmod 0440 /etc/sudoers
 
 echo 'Setting the clock...'
-ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime
+ln -sf /usr/share/zoneinfo/America/New_York /etc/localtime
 timedatectl set-ntp true
 hwclock --systohc
 
@@ -109,6 +109,9 @@ echo \
 ::1		localhost
 127.0.1.1	${hostname}.localdomain	${hostname}" \
 > /etc/hosts
+
+echo 'Enabling SSH...'
+systemctl enable dropbear.service
 
 # usually targets before sysinit which can cause this to delay boot
 echo 'Optimizing systemd-backlight.service...'
